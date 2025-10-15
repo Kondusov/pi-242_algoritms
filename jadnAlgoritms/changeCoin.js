@@ -19,8 +19,8 @@ function makeChange(coins, amount) {
 }
 
 // Пример использования:
-const coins = [4, 5];
-const amount = 16;
+const coins = [4, 5, 2, 1];
+const amount = 20;
 const result = makeChange(coins, amount);
 console.log(`Для суммы ${amount} из монет [${coins}] жадный алгоритм выдал:`, result); // Вывод: [4, 1, 1]
 

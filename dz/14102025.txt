@@ -1,0 +1,2 @@
+Рассмотрите пример жадного алгоритма (см. репозиторий https://github.com/Kondusov/pi-242_algoritms/blob/main/jadnAlgoritms/changeCoin.js)
+И напишите такую программу на любом ЯП. Запомните эту логику.
