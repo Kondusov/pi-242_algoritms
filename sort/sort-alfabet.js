@@ -3,17 +3,16 @@
 // (отсортировали по алфавиту)
 function sortAlfabet(arr, Alfabet){
     let new_arr = [];
-    arr.forEach(function(word) {
-        let simbol = word.slice(0,1);
-        Alfabet.forEach(function(element) {
+    Alfabet.forEach(function(element) {
+        arr.forEach(function(word) {
+            let simbol = word.slice(0,1);
             if(element == simbol){
-                new_arr.push = word;
+                new_arr.push(word);
             }
         });
-        console.log(element);
       });
       return new_arr;
     }
-let Alfabet = ['a','b','c' , 'd' , 'f'];
+let Alfabet = ['a','b','c' , 'd' , 'f', 'k'];
 arr1 = ["banana", "apple", "kiwi"];
-console.log(sortAlfabet(arr1));
+console.log(sortAlfabet(arr1, Alfabet));
