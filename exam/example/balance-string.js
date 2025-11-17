@@ -8,8 +8,8 @@ function balance(str){
         if(symbol== '('){result+=1};
         if(symbol == ')') result-=1; 
     }
-    if(result == 0) return 1;
-    else return -1;
+    if(result == 0) return true;
+    else return result;
 }
 let text = 'Первый метод — str.indexOf(substr, pos). Он ищет подстроку ';
 let bad_text = 'Первый метод — str.indexOf(substr, pos. Он ищет подстроку ';
