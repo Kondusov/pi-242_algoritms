@@ -2,6 +2,8 @@
 // для входного массива ["banana", "apple", "kiwi"] результат должен быть ["kiwi", "apple", "banana"].
 // (отсортировали по колличеству символов)
 
+
+////////////////////////////
 let arr1 = ["banana", "apple", "kiwi", "kolonhoe"];
 arr1.sort((a,b)=>a.length - b.length);
 console.log(arr1);

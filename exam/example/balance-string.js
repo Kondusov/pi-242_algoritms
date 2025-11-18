@@ -5,7 +5,7 @@ function balance(str){
     result = 0;
     for(key in arr){
         let symbol = arr[key];
-        if(symbol== '('){result+=1};
+        if(symbol == '('){result+=1};
         if(symbol == ')') result-=1; 
     }
     if(result == 0) return true;
