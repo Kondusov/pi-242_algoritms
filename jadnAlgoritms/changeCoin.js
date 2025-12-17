@@ -9,9 +9,10 @@ function makeChange(coins, amount) {
   for (const coin of coins) {
     while (remainingAmount >= coin) {
       change.push(coin);
-      console.log(change);
       remainingAmount -= coin;
     }
+    console.log(coin);
+    if(remainingAmount == 0) return "Разменено монетами " + change;
   }
 
   // Если остаток равен 0, значит, удалось подобрать монеты
@@ -19,7 +20,7 @@ function makeChange(coins, amount) {
 }
 
 // Пример использования:
-const coins = [4, 5, 2, 1];
+const coins = [3, 8, 2];
 const amount = 20;
 const result = makeChange(coins, amount);
 console.log(`Для суммы ${amount} из монет [${coins}] жадный алгоритм выдал:`, result); // Вывод: [4, 1, 1]

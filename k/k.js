@@ -4,7 +4,7 @@ const data = [
     { x: 1, y: 2, label: 'A' },
     { x: 2, y: 3, label: 'A' },
     { x: 3, y: 1, label: 'B' },
-    { x: 5, y: 4, label: 'B' },
+    { x: 5, y: 4, label: 'B' },       x: 4, y: 4
     { x: 6, y: 5, label: 'B' }
   ];
   
