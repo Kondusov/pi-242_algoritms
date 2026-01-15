@@ -1,0 +1,2 @@
+Решите три алгоритмические задачи, из нашего списка задач.
+см. наш репозиторий https://github.com/Kondusov/pi-242_algoritms/blob/main/exam/osnovi_algoritm-exam_voprosi.txt
