@@ -1,0 +1,241 @@
+
+Задача 1: Реализуйте пузырьковую сортировку (Сортировка простыми обменами) для массива целых чисел. 
+Например, для массива [7,5,4,2,3,1,8,6] результат должен быть [1,2,3,4,5,6,7,8].
+
+
+function bubbleSort(arr) {
+  const n = arr.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+const unsortedArray = [-5, 23, 7, 5, 3, -12, -29, 21, 54, 35, 0];
+const sortedArray = bubbleSort(unsortedArray);
+console.log(sortedArray);
+
+
+
+
+
+
+
+
+Задача 2: Напишите функцию, которая выполняет бинарный поиск в массиве положительных чисел.
+Функция возвращает индекс искомого элемента, в случае если не находит - возвращает -1.
+
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid] === target) {
+      return mid;
+    }
+    else if (arr[mid] < target) {
+      left = mid + 1;
+    }
+    else {
+      right = mid - 1;
+    }
+  }
+  return -1;
+}
+const sortedArray = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+const targetValue = 30;
+const index = binarySearch(sortedArray, targetValue);
+
+if (index !== -1) {
+  console.log(`Элемент ${targetValue} найден по индексу: ${index}`);
+} else {
+  console.log(`Элемент ${targetValue} не найден в массиве.`);
+}
+
+const notFoundValue = 100;
+const notFoundIndex = binarySearch(sortedArray, notFoundValue);
+console.log(`Элемент ${notFoundValue} найден по индексу: ${notFoundIndex}`);
+
+
+
+
+
+
+
+
+
+
+Задача 3: На замену.
+
+Задача 4: Напишите функцию, которая реализует структуру данных - стек.
+(для примера добавьте в стек несколько элементов, и удалите один)
+Напишите функцию, которая реализует структуру данных - очередь.
+(для примера добавьте в очередь несколько элементов, и удалите один)
+
+class Queue{
+    constructor(arr){
+        this.item = arr;
+    }
+    set setter(element){
+        this.item.push(element);
+    }
+    get getter(){
+        return this.item.shift();
+    }
+}
+
+let arr = [1,2,3];
+let queue = new Queue(arr);
+
+queue.setter = 1;
+queue.setter = 2;
+queue.getter;
+console.log(queue);
+
+
+class Stack {
+    constructor(arr = []) {
+        this.items = arr;
+    }
+    
+    push(element) {
+        this.items.push(element);
+    }
+    
+    pop() {
+        return this.items.pop();
+    }
+}
+
+let stack = new Stack([1, 2, 3]);
+stack.push(4);
+stack.push(5);
+console.log(stack.pop());
+console.log(stack);
+
+
+
+Задача 5: Реализуйте сортировку выбором для массива строк. Например,
+для входного массива ["banana", "apple", "kiwi"] результат должен быть ["kiwi", "apple", "banana"].
+(отсортировали по колличеству символов)
+
+let arr1 = ["banana", "apple", "kiwi", "kolonhoe"];
+arr1.sort((a,b)=>a.length - b.length);
+console.log(arr1);
+
+
+Задача 6: Реализуйте сортировку выбором для массива строк. Например,
+для входного массива ["banana", "apple", "kiwi"] результат должен быть ["apple", "banana", "kiwi"].
+(отсортировали по алфавиту)
+
+functio SortAlpha(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let min = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[min]) min = j;
+    }
+    [arr[i], arr[min]] = [arr[min], arr[i]];
+  }
+  return arr;
+}
+
+console.log(SortAlpha(["banana", "apple", "kiwi"]));
+
+
+
+
+
+
+
+
+Задача 7: Реализуйте рекурсивную функцию для вычисления суммы всех элементов массива.
+Например, для массива [1, 2, 3] результат должен быть 6.
+
+function sum(arr) {
+    if (arr.length == 0) return 0;
+    return arr[0] + sum(arr.slice(1));
+}
+console.log(sum([67, 4, 3]));
+
+
+
+
+
+Задача 8: Реализуйте жадный алгоритм для решения задачи о рюкзаке
+(она же задача размена монетами, купюры).
+
+function greedyChange(coins, amount) {
+  coins.sort((a, b) => b - a);
+  let res = [];
+  let remaining = amount;
+
+  for (const coin of coins) {
+    while (coin <= remaining) {
+      res.push(coin);
+      remaining -= coin;
+    }
+  }
+  return remaining === 0 ? res : null;
+}
+
+console.log(greedyChange([25, 10, 5, 1], 63)); // [25, 25, 10, 1, 1, 1]
+
+
+
+
+
+
+Задача 9: Напишите функцию (хеш-функцию) для хеш таблицы, которая проверяет данные при добавлении в таблицу,
+и исключает коллизии.
+
+function addElement (arr, key, val){   
+    if(key in arr) {
+        console.log(`${key} Уже существует`)
+        return false;
+    }
+    else {
+        arr[key] = val;
+        return true;
+    }
+}
+let arr1 = {};
+addElement (arr1, 'qwe', 'rty')
+addElement (arr1, 'qwe', 'irts')
+console.log(arr1)
+
+
+Задача 10: Напишите функцию, которая проверяет сбалансированна строка или нет.
+Например, если в тексте скобка была открыта и далее по тексту - закрыта, то вернуть - true, а иначе — false.
+
+function Balanced(str) {
+  let balanc = 0;
+  for (char of str) {
+    if (char == '(') balanc++;
+    if (char == ')') balanc--;
+  }
+  return balanc == 0;
+}
+console.log(Balanced("(asdasd(sdsadas)asdasd)кеуекуекуе((фывфывфыв((ыфвфывф)))фывыфвыфв)"));
+
+
+Задача 11: Сортировка пузырком, сортировка по длине слов.
+const Words = ["яблоко", "банан", "дом", "еж"];
+function bubbleSort(arr){
+    let n = arr.length;
+    for (let i = 0; i < n; i++){
+        for ( let j = 0; j < n  - 1; j++){
+            if (arr[j].length > arr[j+1].length){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+console.log(bubbleSort(Words))
