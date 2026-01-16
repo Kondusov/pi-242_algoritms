@@ -24,8 +24,13 @@ console.log('Пересечение:', [...intersection]); // [3, 4]
 
 // 4. Разность (Difference)
 // Оставляем только те элементы из A, которых нет в B
-const difference = new Set([...setA].filter(item => !setB.has(item)));
-console.log('Разность (A - B):', [...difference]); // [1, 2]
+const differenceA = new Set([...setA].filter(item => !setB.has(item)));
+console.log('Разность (A - B):', [...differenceA]); // [1, 2]
+
+// 4. Разность (B из A)
+// Оставляем только те элементы из A, которых нет в B
+const differenceB = new Set([...setB].filter(item => !setA.has(item)));
+console.log('Разность (B - A):', [...differenceB]); // [1, 2]
 
 
 // Как это работает:
