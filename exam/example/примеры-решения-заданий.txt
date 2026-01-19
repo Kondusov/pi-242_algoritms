@@ -63,13 +63,6 @@ console.log(`Элемент ${notFoundValue} найден по индексу: $
 
 
 
-
-
-
-
-
-
-
 Задача 3: На замену.
 
 Задача 4: Напишите функцию, которая реализует структуру данных - стек.
@@ -145,11 +138,6 @@ functio SortAlpha(arr) {
 }
 
 console.log(SortAlpha(["banana", "apple", "kiwi"]));
-
-
-
-
-
 
 
 

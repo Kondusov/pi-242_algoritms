@@ -12,7 +12,7 @@ function balance(str){
     if(result == 0) return true;
     else return result;
 }
-let text = 'Первый метод — str.indexOf)substr, pos(. Он ищет подстроку ';
+let text = 'Первый метод — str.indexOf ) substr, pos(. Он ищет подстроку ';
 let bad_text = 'Первый метод — str.indexOf(substr, pos. Он ищет подстроку ';
 console.log(balance(text));
 console.log(balance(bad_text));
